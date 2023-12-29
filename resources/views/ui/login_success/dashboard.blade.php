@@ -1,0 +1,1 @@
+Welcome {{$data->name}} <a href="{{ route('signout')}}">Signout</a>

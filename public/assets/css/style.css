@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+/*@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+*/
+body {
+  background-color: #eee;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+}
+.white{
+  color:#FFF;
+}
+button.btn.btn-block.continue.white.mt-2:hover{
+color:#FFF;
+}
+.container {
+  height: 100vh;
+}
+.card {
+  width: 400px;
+  border: none;
+}
+.form-control {
+  border: 2px solid #bdc1d2;
+  font-size: 13px;
+  height: 48px;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #0d8065;
+  outline: 0;
+  box-shadow: none;
+}
+.form {
+  position: relative;
+  margin-bottom: 25px;
+}
+.form a {
+  position: absolute;
+  right: 8px;
+  bottom: 10px;
+  color: #6ca0d6;
+  font-size: 13px;
+  text-decoration: none;
+  z-index: 10;
+  background-color: #fff;
+  padding: 5px;
+}
+.continue {
+  height: 48px;
+  font-size: 13px;
+  background-color: #0d8065;
+  border: none;
+}
+.line-text {
+  color: #cecece;
+}
+.line {
+  background-color: #eeeff6;
+  width: 166px;
+  height: 2px;
+}
+.member a {
+  color: #0d8065;
+  font-size: 14px;
+}
+.member span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #6ca0d6;
+}
+/*.facebook-button {
+  background-color: #39559f;
+}
+.facebook-button:hover {
+  background-color: #39559f;
+}
+.facebook:focus {
+  color: #fff;
+  background-color: #4285f4;
+  border-color: #4285f4;
+  box-shadow: none;
+}
+.google-button {
+  background-color: #4285f4;
+}
+.google-button:hover {
+  background-color: #4285f4;
+}*/
