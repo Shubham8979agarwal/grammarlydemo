@@ -11,3 +11,6 @@ php artisan route:cache
 
 echo "Running migrations..."
 php artisan migrate --force
+
+# run the main container `CMD` (or an execution-time override)
+exec "$@"
