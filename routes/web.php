@@ -22,6 +22,17 @@ Route::post('make-login', [UIController::class, 'make_login'])->name('make.login
 Route::get('/register', [UIController::class, 'register'])->name('register');
 Route::post('make-account', [UIController::class, 'make_account'])->name('make.account');
 
+Route::get('/run_migrations', function () {
+try {
+    dump('Init with app tables migrations...');
+    dump(Artisan::call( 'migrate', ['--step'=> ''] ));
+    dump('Done with app tables migrations');
+} catch (Exception $e) {
+    print_r($e->getMessage());
+    Response::make($e->getMessage(), 500);
+}
+});
+
 #AfterLogin
 Route::group(['middleware' => 'disable_back_btn'], function () {
 Route::group(['middleware' => ['auth']], function()
