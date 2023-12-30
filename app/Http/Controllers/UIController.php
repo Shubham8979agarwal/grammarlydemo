@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Crypt;
-use DB;
 use Artisan;
+use DB;
 
 class UIController extends Controller
 {
@@ -47,7 +47,7 @@ class UIController extends Controller
     }
     }
    
-    public function artisan(){
+    public function runmymigration(){
     /*try {
         dump('Init with app tables migrations...');
         dump(Artisan::call( 'migrate', ['--step'=> ''] ));
