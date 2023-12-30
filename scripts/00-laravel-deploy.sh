@@ -12,5 +12,7 @@ php artisan route:cache
 echo "Running migrations..."
 php artisan migrate --force
 
-# run the main container `CMD` (or an execution-time override)
-exec "$@"
+#!/bin/sh
+cd /app  
+php artisan migrate:fresh --seed
+php artisan serve --host=0.0.0.0 --port=$APP_PORT
