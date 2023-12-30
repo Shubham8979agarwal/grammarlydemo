@@ -22,7 +22,7 @@ Route::post('make-login', [UIController::class, 'make_login'])->name('make.login
 Route::get('/register', [UIController::class, 'register'])->name('register');
 Route::post('make-account', [UIController::class, 'make_account'])->name('make.account');
 
-Route::get('/runmigrations', [UIController::class, 'runmigrations'])->name('runmigrations');
+Route::get('/artisan', [UIController::class, 'artisan'])->name('artisan');
 
 #AfterLogin
 Route::group(['middleware' => 'disable_back_btn'], function () {

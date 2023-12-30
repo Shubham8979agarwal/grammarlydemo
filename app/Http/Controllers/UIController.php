@@ -17,6 +17,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Crypt;
 use DB;
+use Artisan;
 
 class UIController extends Controller
 {
@@ -46,15 +47,20 @@ class UIController extends Controller
     }
     }
    
-    public function runmigrations(){
-    try {
+    public function artisan(){
+    /*try {
         dump('Init with app tables migrations...');
         dump(Artisan::call( 'migrate', ['--step'=> ''] ));
         dump('Done with app tables migrations');
     }catch (Exception $e) {
     print_r($e->getMessage());
     Response::make($e->getMessage(), 500);
-    }
+    }*/
+
+    Artisan::call('migrate:fresh');
+    Artisan::call('make:seeder UsersTableSeeder');
+    Artisan::call('config:clear');
+
     }
 
     public function make_account(Request $request)
