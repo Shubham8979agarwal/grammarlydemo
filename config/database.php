@@ -66,7 +66,7 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
+            'url' => env('DATABASE_URL','postgres://grammarlydemo_user:47LNE8uepzdmSWwqfEi4mzqqK6KKOiNM@dpg-cm7b0aud3nmc73cfu5eg-a/grammarlydemo'),
             'host' => env('DB_HOST', 'dpg-cm7b0aud3nmc73cfu5eg-a'),
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'grammarlydemo'),
