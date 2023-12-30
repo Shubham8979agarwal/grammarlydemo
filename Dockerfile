@@ -17,6 +17,3 @@ RUN npm install
 RUN npm run build
 
 CMD ["/start.sh"]
-
-copy ./run.sh /tmp    
-ENTRYPOINT ["/tmp/run.sh"]
