@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use Artisan;
-use DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +21,6 @@ Route::post('make-login', [UIController::class, 'make_login'])->name('make.login
 
 Route::get('/register', [UIController::class, 'register'])->name('register');
 Route::post('make-account', [UIController::class, 'make_account'])->name('make.account');
-
-Route::get('/runmymigration', [UIController::class, 'runmymigration'])->name('runmymigration');
 
 #AfterLogin
 Route::group(['middleware' => 'disable_back_btn'], function () {
