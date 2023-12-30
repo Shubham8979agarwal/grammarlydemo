@@ -1,11 +1,19 @@
-FROM php:8.0-fpm-alpine
+# Dockerfile
+# Use base image for container
+FROM richarvey/nginx-php-fpm:3.1.6
 
-RUN docker-php-ext-install pdo pdo_mysql sockets
-RUN curl -sS https://getcomposer.org/installer | php -- \
-     --install-dir=/usr/local/bin --filename=composer
-
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-WORKDIR /app
+# Copy all application code into your Docker container
 COPY . .
-RUN composer install
+
+RUN apk update
+
+# Install the `npm` package
+RUN apk add --no-cache npm
+
+# Install NPM dependencies
+RUN npm install
+
+# Build Vite assets
+RUN npm run build
+
+CMD ["/start.sh"]
