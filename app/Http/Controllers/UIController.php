@@ -45,6 +45,17 @@ class UIController extends Controller
         return view('ui.register');
     }
     }
+   
+    public function runmigrations(){
+    try {
+        dump('Init with app tables migrations...');
+        dump(Artisan::call( 'migrate', ['--step'=> ''] ));
+        dump('Done with app tables migrations');
+    }catch (Exception $e) {
+    print_r($e->getMessage());
+    Response::make($e->getMessage(), 500);
+    }
+    }
 
     public function make_account(Request $request)
     {  
