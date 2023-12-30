@@ -10,7 +10,6 @@ services:
     plan: free
     name: grammarlydemo
     runtime: docker
-    command: docker-compose exec app php artisan migrate --seed
     envVars:
       # Database
       - key: DATABASE_URL
