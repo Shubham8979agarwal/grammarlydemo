@@ -1,10 +1,10 @@
 <!-- Footer -->
             <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
+                <!-- <div class="container my-auto"> -->
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; 2024</span>
                     </div>
-                </div>
+                <!-- </div> -->
             </footer>
             <!-- End of Footer -->
 
@@ -50,11 +50,11 @@
     <script src="{{ url('assets/extras/js/sb-admin-2.min.js') }}"></script>
 
     <!-- Page level plugins -->
-    <script src="{{ url('assets/extras/vendor/chart.js/Chart.min.js') }}"></script>
+    <!-- <script src="{{ url('assets/extras/vendor/chart.js/Chart.min.js') }}"></script> -->
 
     <!-- Page level custom scripts -->
-    <script src="{{ url('assets/extras/js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ url('assets/extras/js/demo/chart-pie-demo.js') }}"></script>
+    <!-- <script src="{{ url('assets/extras/js/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ url('assets/extras/js/demo/chart-pie-demo.js') }}"></script> -->
 
 </body>
 

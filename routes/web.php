@@ -27,6 +27,15 @@ Route::group(['middleware' => 'disable_back_btn'], function () {
 Route::group(['middleware' => ['auth']], function()
 { 
     Route::get('/dashboard', [UIController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('/create-document', [UIController::class, 'createdocument'])->name('create-document');
+    Route::post('savedocument', [UIController::class, 'savedocument'])->name('savedocument');
+
+    Route::get('/edit-document/{id}', [UIController::class, 'editdocument'])->name('edit-document');
+    Route::post('update-document', [UIController::class, 'updatedocument'])->name('update-document');
+
+    Route::get('deletedocument/{id}', [UIController::class, 'deletedocument'])->name('deletedocument');
+
     Route::get('signout', [UIController::class, 'signout'])->name('signout');
 });
 });

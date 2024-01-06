@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Hash;
 use Session;
 use App\Models\User;
-#use App\Models\BrandFeed;
+use App\Models\Createdocument;
 #use App\Models\AppliedByInfluencer;
 #use App\Models\SocialMediaEngagement;
 #use App\Models\PaymentLogs;
@@ -84,6 +84,7 @@ class UIController extends Controller
     {
         if(Auth::check()){
         $user['data'] = Auth::user();
+        $user['savedocument'] = DB::table('createdocuments')->where('useremail', Auth::user()->email)->get();
         return view('ui.login_success.dashboard',$user);
         }else{
             $this->signout();
@@ -91,10 +92,83 @@ class UIController extends Controller
         } 
     }
 
+    public function createdocument(){
+        if(Auth::check()){
+        $user['data'] = Auth::user();
+        return view('ui.login_success.documents.createdocument',$user);
+        }else{
+            $this->signout();
+            return redirect('/');
+        }
+    }
+
+    public function editdocument($documentid){
+        if(Auth::check()){
+        $user['data'] = Auth::user();
+        $user['editabledata'] = DB::table('createdocuments')->where('useremail', Auth::user()->email)->where('documentid',$documentid)->get();
+        $user['editabledata'] = array($user['editabledata']);
+        return view('ui.login_success.documents.editdocument',$user);
+        }else{
+            $this->signout();
+            return redirect('/');
+        }
+    }
+
+    public function savedocument(Request $request){
+        if(Auth::check()){
+        $user['data'] = Auth::user();
+        $request->validate([
+            'documentname' => 'required',
+            'documentdesc' => 'required',
+            'status' => '1',
+        ]);
+        $data = $request->all();
+        $data['useremail'] = Auth::user()->email;
+        $data['documentid'] = Str::random(9);
+        $savedocument = Createdocument::create($data);
+        return back()->with('save_success','Document Saved Successfully.');
+        }else{
+            $this->signout();
+            return redirect('/');
+        }
+    }
+
+    public function updatedocument(Request $request){
+        if(Auth::check()){
+        $user['data'] = Auth::user();
+        $request->validate([
+            'documentid' => 'required',
+            'documentname' => 'required',
+            'documentdesc' => 'required',
+        ]);
+        $data = $request->all();
+        $updateDetails = [
+                'documentid' => $request->get('documentid'),
+                'documentname' => $request->get('documentname'),
+                'documentdesc' => $request->get('documentdesc'),
+             ];
+        $update = DB::table('createdocuments')->where('useremail', auth()->user()->email)->where('documentid',$request->get('documentid'))->update($updateDetails);
+        return back()->with('update_success','Document Updated Successfully.');
+        }else{
+            $this->signout();
+            return redirect('/');
+        }
+    }
+
+    public function deletedocument($documentid){
+    if(Auth::check()){  
+        //$inquiryid = decrypt($inquiryid);
+        $deletereq = DB::delete('delete from createdocuments where documentid = ?',[$documentid]);
+        return redirect('dashboard')->with('delete_success','Document Deleted Successfully..');
+    }else{
+        $this->signout();
+        return redirect('/');
+    }
+}
+
     public function signOut() {
         Session::flush();
         Auth::logout();
-  
         return Redirect('/');
     }
 
