@@ -31,7 +31,7 @@
         theme: 'modern',
         apply_source_formatting : false,
         plugins: ["paste", "BeyondGrammar", 'link', "print", "preview", "fullpage", "searchreplace", "autolink", "directionality", "visualblocks", "visualchars", "fullscreen", "image", "link", "media", "template", "codesample", "table", "charmap", "hr", "pagebreak", "nonbreaking", "anchor", "toc", "insertdatetime", "advlist", "lists", "textcolor", "wordcount", "imagetools", "contextmenu", "colorpicker", "textpattern", "help"],
-        toolbar: ["undo redo | styleselect | fontselect | bold italic link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+        toolbar: ["undo redo | styleselect | fontselect | bold italic link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | BeyondGrammar"
         ],
         //all options placed in `bgOptions` object
         bgOptions: {
@@ -39,7 +39,7 @@
             //localization for BeyondGrammar interface, will be used default or got by system information, please use same version with the plugin.
           i18n: {
             en: "https://prowriting.azureedge.net/beyondgrammar-tinymce/1.0.16/dist/i18n-en.js",
-            /*nl:"{{ url('assets/js/langs/nl.js') }}"*/
+            nl:"{{ url('assets/js/langs/nl.js') }}"
           },
 
           //You should signup for getting this key
