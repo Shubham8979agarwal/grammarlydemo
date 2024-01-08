@@ -30,13 +30,12 @@ tinymce.init({
   //don't forget to install 'BeyondGrammar' as a plugin and part of toolbar
   plugins: ["paste", "BeyondGrammar", 'link', "print", "preview", "fullpage", "searchreplace", "autolink", "directionality", "visualblocks", "visualchars", "fullscreen", "image", "link", "media", "template", "codesample", "table", "charmap", "hr", "pagebreak", "nonbreaking", "anchor", "toc", "insertdatetime", "advlist", "lists", "textcolor", "wordcount", "imagetools", "contextmenu", "colorpicker", "textpattern", "help"],
   toolbar: [
-    "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | BeyondGrammar"
+    "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
   ],
 
   //all options placed in `bgOptions` object
   bgOptions: {
     service: {
-
       //localization for BeyondGrammar interface, will be used default or got by system information, please use same version with the plugin.
       i18n: {
         en: "https://prowriting.azureedge.net/beyondgrammar-tinymce/1.0.16/dist/i18n-en.js"
