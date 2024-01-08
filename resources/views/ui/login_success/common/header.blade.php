@@ -24,13 +24,12 @@
     <script type="text/javascript">    
         tinymce.init({
         selector: '#feed_description',
-        content_style:"@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap'); body { font-family: Oswald; }",
         branding: false,
         height: 300,
         theme: 'modern',
         apply_source_formatting : false,
         plugins: ["paste", "BeyondGrammar", 'link', "print", "preview", "fullpage", "searchreplace", "autolink", "directionality", "visualblocks", "visualchars", "fullscreen", "image", "link", "media", "template", "codesample", "table", "charmap", "hr", "pagebreak", "nonbreaking", "anchor", "toc", "insertdatetime", "advlist", "lists", "textcolor", "wordcount", "imagetools", "contextmenu", "colorpicker", "textpattern", "help"],
-        toolbar: ["undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+        toolbar: ["undo redo | styleselect | fontselect | bold italic link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
         ],
         //all options placed in `bgOptions` object
         bgOptions: {
