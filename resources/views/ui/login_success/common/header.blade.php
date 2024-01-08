@@ -28,7 +28,7 @@ tinymce.init({
   selector: '#feed_description',
   height: 300,
   //don't forget to install 'BeyondGrammar' as a plugin and part of toolbar
-  plugins: ["paste", "BeyondGrammar", 'link'],
+  plugins: ["paste", "BeyondGrammar", 'link', "print", "preview", "fullpage", "searchreplace", "autolink", "directionality", "visualblocks", "visualchars", "fullscreen", "image", "link", "media", "template", "codesample", "table", "charmap", "hr", "pagebreak", "nonbreaking", "anchor", "toc", "insertdatetime", "advlist", "lists", "textcolor", "wordcount", "imagetools", "contextmenu", "colorpicker", "textpattern", "help"],
   toolbar: [
     "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | BeyondGrammar"
   ],
