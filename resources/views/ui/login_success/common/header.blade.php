@@ -19,91 +19,75 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ url('assets/extras/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <!-- <link href="{{ url('assets/css/style.css') }}" rel="stylesheet"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.2/tinymce.min.js"></script>
     <script src="https://prowriting.azureedge.net/beyondgrammar-tinymce/1.0.57/dist/beyond-grammar-plugin.js"></script>
-    <script type="text/javascript">
-        //as container you can use as textarea, so and div
-tinymce.init({
-  selector: '#feed_description',
-  height: 300,
-  //don't forget to install 'BeyondGrammar' as a plugin and part of toolbar
-  plugins: ["paste", "BeyondGrammar", 'link', "print", "preview", "fullpage", "searchreplace", "autolink", "directionality", "visualblocks", "visualchars", "fullscreen", "image", "link", "media", "template", "codesample", "table", "charmap", "hr", "pagebreak", "nonbreaking", "anchor", "toc", "insertdatetime", "advlist", "lists", "textcolor", "wordcount", "imagetools", "contextmenu", "colorpicker", "textpattern", "help"],
-  toolbar: [
-    "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
-  ],
+    <script type="text/javascript">    
+        tinymce.init({
+        selector: '#feed_description',
+        content_style:"@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap'); body { font-family: Oswald; }",
+        branding: false,
+        height: 300,
+        theme: 'modern',
+        apply_source_formatting : false,
+        plugins: ["paste", "BeyondGrammar", 'link', "print", "preview", "fullpage", "searchreplace", "autolink", "directionality", "visualblocks", "visualchars", "fullscreen", "image", "link", "media", "template", "codesample", "table", "charmap", "hr", "pagebreak", "nonbreaking", "anchor", "toc", "insertdatetime", "advlist", "lists", "textcolor", "wordcount", "imagetools", "contextmenu", "colorpicker", "textpattern", "help"],
+        toolbar: ["undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+        ],
+        //all options placed in `bgOptions` object
+        bgOptions: {
+            service: {
+            //localization for BeyondGrammar interface, will be used default or got by system information, please use same version with the plugin.
+          i18n: {
+            en: "https://prowriting.azureedge.net/beyondgrammar-tinymce/1.0.16/dist/i18n-en.js"
+          },
 
-  //all options placed in `bgOptions` object
-  bgOptions: {
-    service: {
-      //localization for BeyondGrammar interface, will be used default or got by system information, please use same version with the plugin.
-      i18n: {
-        en: "https://prowriting.azureedge.net/beyondgrammar-tinymce/1.0.16/dist/i18n-en.js"
-      },
+          //You should signup for getting this key
+          apiKey: "E8FEF7AE-3F36-4EAF-A451-456D05E6F2A3",
 
-      //You should signup for getting this key
-      apiKey: "E8FEF7AE-3F36-4EAF-A451-456D05E6F2A3",
+          //[optional] You can specify it for permanent access to your settings and dictionaries
+          //userId: "<YOUR_USER_ID>",
 
-      //[optional] You can specify it for permanent access to your settings and dictionaries
-      //userId: "<YOUR_USER_ID>",
+          //[optional] path to js file with BeyondGrammar Core
+          //sourcePath : "", 
 
-      //[optional] path to js file with BeyondGrammar Core
-      //sourcePath : "", 
+          //[optional] path to service which provides grammar checking
+          // url shouldn's contains / in the end
+          //serviceUrl : "https://rtg.prowritingaid.com/api/v1", 
+        },
+        grammar: {
+          //[optional] Default language [en-US, en-GB],
+          languageIsoCode: "en-US",
 
-      //[optional] path to service which provides grammar checking
-      // url shouldn's contains / in the end
-      //serviceUrl : "https://rtg.prowritingaid.com/api/v1", 
-    },
-    grammar: {
-      //[optional] Default language [en-US, en-GB],
-      languageIsoCode: "en-US",
+          //[optional] checking Style. By default is "true"
+          checkStyle: true,
 
-      //[optional] checking Style. By default is "true"
-      checkStyle: true,
+          //[optional] checking Spelling. By default is "true"
+          checkSpelling: true,
 
-      //[optional] checking Spelling. By default is "true"
-      checkSpelling: true,
+          //[optional] checking Grammar. By default is "true"
+          checkGrammar: true,
 
-      //[optional] checking Grammar. By default is "true"
-      checkGrammar: true,
+          //[optional] Show thesaurus information by double click, by default true
+          showThesaurusByDoubleClick: true,
 
-      //[optional] Show thesaurus information by double click, by default true
-      showThesaurusByDoubleClick: true,
-
-      //[optional] Showing context thesaurus, works only if showThesaurusByDoubleClick = true, by default false
-      showContextThesaurus: false,
-    }
-  }
-});
-
+          //[optional] Showing context thesaurus, works only if showThesaurusByDoubleClick = true, by default false
+          showContextThesaurus: false,
+        }
+      }
+    });
     </script>
-
-    <!-- <script type="text/javascript">tinymce.init({
-         selector: '#feed_description',
-         branding: false,
-         height: 250,
-         theme: 'modern',
-         apply_source_formatting : false,
-         plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
-         toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
-         image_advtab: true
-         });
-      </script> -->
-      <style>
+    <style>
     .continue {
-    height: 48px;
-    font-size: 13px;
-    background-color: #0d8065;
-    border: none;
-    }
+        height: 48px;
+        font-size: 13px;
+        background-color: #0d8065;
+        border: none;
+        }
     .white{
-  color:#FFF;
-}
-button.btn.btn-block.continue.white.mt-2:hover{
-color:#FFF;
-}
+        color:#FFF;
+    }
+    button.btn.btn-block.continue.white.mt-2:hover{
+        color:#FFF;
+    }
     </style>
-
 </head>
-
 <body id="page-top">
