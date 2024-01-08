@@ -38,8 +38,7 @@
             service: {
             //localization for BeyondGrammar interface, will be used default or got by system information, please use same version with the plugin.
           i18n: {
-            /*en: "https://prowriting.azureedge.net/beyondgrammar-tinymce/1.0.16/dist/i18n-en.js",*/
-            nl:"{{ url('assets/js/langs/nl.js') }}"
+            en: "https://prowriting.azureedge.net/beyondgrammar-tinymce/1.0.16/dist/i18n-en.js",
           },
 
           //You should signup for getting this key
@@ -57,7 +56,7 @@
         },
         grammar: {
           //[optional] Default language [en-US, en-GB],
-          languageIsoCode: "nl",
+          languageIsoCode: "en-US",
 
           //[optional] checking Style. By default is "true"
           checkStyle: true,
