@@ -21,6 +21,7 @@
     <link href="{{ url('assets/extras/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.2/tinymce.min.js"></script>
     <script src="{{ url('assets/js/langs/nl.js') }}"></script>
+    <script src="https://prowriting.azureedge.net/beyondgrammar/1.0.195/dist/bundle.js"></script>
     <script src="https://prowriting.azureedge.net/beyondgrammar-tinymce/1.0.57/dist/beyond-grammar-plugin.js"></script>
     <script type="text/javascript">    
         tinymce.init({
