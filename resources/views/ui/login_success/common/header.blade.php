@@ -72,7 +72,7 @@
           showThesaurusByDoubleClick: true,
 
           //[optional] Showing context thesaurus, works only if showThesaurusByDoubleClick = true, by default false
-          showContextThesaurus: false,
+          showContextThesaurus: true,
         }
       }
     });
