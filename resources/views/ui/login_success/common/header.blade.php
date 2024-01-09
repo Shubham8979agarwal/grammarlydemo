@@ -38,7 +38,7 @@
             service: {
             //localization for BeyondGrammar interface, will be used default or got by system information, please use same version with the plugin.
           i18n: {
-            en: "https://prowriting.azureedge.net/beyondgrammar-tinymce/1.0.16/dist/i18n-en.js",
+            /*en: "https://prowriting.azureedge.net/beyondgrammar-tinymce/1.0.16/dist/i18n-en.js",*/
             nl:"{{ url('assets/js/langs/nl.js') }}"
           },
 
@@ -72,7 +72,7 @@
           showThesaurusByDoubleClick: true,
 
           //[optional] Showing context thesaurus, works only if showThesaurusByDoubleClick = true, by default false
-          showContextThesaurus: true,
+          showContextThesaurus: false,
         }
       }
     });
